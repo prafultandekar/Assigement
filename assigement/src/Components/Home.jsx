@@ -103,8 +103,8 @@ function Home() {
   };
   console.log(element);
   return (
-    <Box>
-      <Box sx={{ display: "flex" }}>
+    <Box  >
+      <Box sx={{ display: "flex" ,marginLeft:"50px" }}>
         {/* <Checkbox  sx={{marginTop:"2px"}} />
      <h4 >Copy</h4>
      
@@ -121,7 +121,7 @@ function Home() {
         </RadioGroup>
       </Box>
 
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box sx={{ display: "flex", justifyContent: "center"  }}>
         <Box
           sx={{
             border: "1px solid black",
@@ -130,7 +130,7 @@ function Home() {
           }}
         >
           <Box> MASTER</Box>
-          <Box sx={{ overflow: "scroll", maxHeight: "290px"  }}>
+          <Box sx={{ overflow: "scroll", maxHeight: "290px",border:"1px solid black"  }}>
             {data.map((item, id) => {
               return (
                 <Box className={selectedId == id ? "blue" : ""} onClick={() => handleClick(item, id)} key={id}>
@@ -191,11 +191,16 @@ function Home() {
           </Button>
         </Box>
 
-        <Box  sx={{ width: "140px", marginLeft: "30px", height: "60px" }}>
-          <h3>NEW ELEMENT</h3>
+        <Box  sx={{ width: "140px", marginLeft: "30px" , border: "1px solid black",
+            marginBottom: "20px",
+            maxHeight: "500px"}}>
+          <Box>NEW ELEMENT</Box>
+          <Box sx={{border:"1px solid black" }}>
           {data1?.map((item,id) => {
             return <Element className={selectedId == id ? "blue" : ""}  item={item} handleElement={handleElement} />;
           })}
+          </Box>
+         
         </Box>
       </Box>
     </Box>
